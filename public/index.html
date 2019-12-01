@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    axios.get('http://localhost:3000/getUV/')
+      .then(response => sendValue(response.data))
+      .catch(error => console.log(error))
+
+    const sendValue = (res) => {
+      if (res < 10) {
+        document.getElementById("recomendacao").innerHTML = "BAIXO";
+        document.getElementById("protecao").innerHTML = "LIVRE";
+        document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+      }
+      else if (res >= 10 && res < 65) {
+        document.getElementById("recomendacao").innerHTML = "BAIXO";
+        document.getElementById("protecao").innerHTML = "LIVRE";
+        document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+      }
+      else if (res >= 65 && res < 83) {
+        document.getElementById("recomendacao").innerHTML = "BAIXO";
+        document.getElementById("protecao").innerHTML = "LIVRE";
+        document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+      }
+      else if (res >= 83 && res < 103) {
+        document.getElementById("recomendacao").innerHTML = "MODERADO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+      }
+      else if (res >= 103 && res < 124) {
+        document.getElementById("recomendacao").innerHTML = "MODERADO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        document.getElementById("fps").innerHTML = "30";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+      }
+      else if (res >= 124 && res < 142) {
+        document.getElementById("recomendacao").innerHTML = "MODERADO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        document.getElementById("fps").innerHTML = "30";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+      }
+      else if (res >= 142 && res < 162) {
+        document.getElementById("recomendacao").innerHTML = "ALTO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
+        document.getElementById("fps").innerHTML = "30";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+      }
+      else if (res >= 162 && res < 180) {
+        document.getElementById("recomendacao").innerHTML = "ALTO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
+        document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+      }
+      else if (res >= 180 && res < 200) {
+        document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+      }
+      else if (res >= 200 && res < 221) {
+        document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
+        protecao = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+      }
+      else if (res >= 221 && res < 240) {
+        document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        document.getElementById("fps").innerHTML = "60";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+
+      }
+      else {
+        document.getElementById("recomendacao").innerHTML = "EXTREMO";
+        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL / ABRIGO RESIDENCIAL";
+        document.getElementById("fps").innerHTML = "60";
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+        document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+        document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+        document.getElementById("barra1").setAttribute("style", "background-color: #8076b5;");
+      }
+      // document.getElementById("value").innerHTML = res;
+      // document.getElementById("barra1").setAttribute("style", "background-color: white; visibility: hidden; ");
+    }
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta http-equiv="refresh" content="3">
+
+  <title>Medidor UV</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/business-frontpage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Medidor UV</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Saiba Mais</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-primary-100 py-2 mb-2">
+    <div class="container h-100">
+      <!-- <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+
+          <h1 class="display-4 text-white mt-5 mb-2">Business Name or Tagline</h1>
+          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab
+            labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque
+            unde nisi, totam quas ipsam.</p>
+
+        </div>
+      </div> -->
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-1">
+
+        <ul class="list-group">
+
+          <li id="barra1" class="list-group-item" style="background-color: white; visibility: hidden; ">
+            <br>
+          </li>
+
+          <li id="barra2" class="list-group-item" style="background-color: white; visibility: hidden; ">
+            <br>
+          </li>
+
+          <li id="barra3" class="list-group-item" style="background-color: white; visibility: hidden; ">
+            <br>
+          </li>
+
+          <li id="barra4" class="list-group-item" style="background-color: white; visibility: hidden; ">
+            <br>
+          </li>
+
+          <li id="barra5" class="list-group-item" style="background-color: white; visibility: hidden; ">
+            <br>
+          </li>
+
+        </ul>
+
+      </div>
+      
+
+      <div class="col-md-7">
+
+      </div>
+
+      <div class="col-md-2"></div>
+
+    </div>
+
+    <div class="row">
+
+      <!-- <div class="col-md-12">
+        <div class="progress">
+          <div id="barra" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        </div>
+      </div> -->
+
+    </div> <br><br>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">FPS</h5>
+            <p class="card-text" id="fps"><br></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Proteção</h5>
+            <p class="card-text" id="protecao"><br></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Nível</h5>
+            <p class="card-text" id="recomendacao"><br></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Medidor UV &copy; Instrumentação Eletrônica 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
