@@ -9,116 +9,211 @@
       .then(response => sendValue(response.data))
       .catch(error => console.log(error))
 
-    const sendValue = (res) => {
-      if (res < 10) {
+    const sendValue = (str) => {
+      let res = str.split(',');
+      // res[0] -> leitura UV
+      // res[1] -> leitura Temperatura
+      // res[2] -: leitura umidade
+      if (res[0] < 10) {
         document.getElementById("recomendacao").innerHTML = "BAIXO";
-        document.getElementById("protecao").innerHTML = "LIVRE";
+        // document.getElementById("protecao").innerHTML = "LIVRE";
         document.getElementById("fps").innerHTML = "15";
 
-        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
-      }
-      else if (res >= 10 && res < 65) {
-        document.getElementById("recomendacao").innerHTML = "BAIXO";
-        document.getElementById("protecao").innerHTML = "LIVRE";
-        document.getElementById("fps").innerHTML = "15";
+        document.getElementById("indice_uv").innerHTML = "1";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #45a939; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+
+        document.getElementById("img-3").setAttribute("src", "/img/livre.png");
       }
-      else if (res >= 65 && res < 83) {
+      else if (res[0] >= 10 && res[0] < 65) {
         document.getElementById("recomendacao").innerHTML = "BAIXO";
-        document.getElementById("protecao").innerHTML = "LIVRE";
+        // document.getElementById("protecao").innerHTML = "LIVRE";
         document.getElementById("fps").innerHTML = "15";
 
+        document.getElementById("indice_uv").innerHTML = "1";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #45a939; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
+
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/livre.png");
       }
-      else if (res >= 83 && res < 103) {
+      else if (res[0] >= 65 && res[0] < 83) {
+        document.getElementById("recomendacao").innerHTML = "BAIXO";
+        // document.getElementById("protecao").innerHTML = "LIVRE";
+        document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("indice_uv").innerHTML = "2";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #45a939; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/livre.png");
+      }
+      else if (res[0] >= 83 && res[0] < 103) {
         document.getElementById("recomendacao").innerHTML = "MODERADO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
         document.getElementById("fps").innerHTML = "15";
+
+        document.getElementById("indice_uv").innerHTML = "3";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e8e617; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+
+        document.getElementById("img-2").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-4").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-6").setAttribute("src", "/img/protetor_solar.png");
       }
-      else if (res >= 103 && res < 124) {
+      else if (res[0] >= 103 && res[0] < 124) {
         document.getElementById("recomendacao").innerHTML = "MODERADO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
         document.getElementById("fps").innerHTML = "30";
 
-        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
-        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
-      }
-      else if (res >= 124 && res < 142) {
-        document.getElementById("recomendacao").innerHTML = "MODERADO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
-        document.getElementById("fps").innerHTML = "30";
+        document.getElementById("indice_uv").innerHTML = "4";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e8e617; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+
+        document.getElementById("img-2").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-4").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-6").setAttribute("src", "/img/protetor_solar.png");
       }
-      else if (res >= 142 && res < 162) {
+      else if (res[0] >= 124 && res[0] < 142) {
+        document.getElementById("recomendacao").innerHTML = "MODERADO";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR";
+        document.getElementById("fps").innerHTML = "30";
+
+        document.getElementById("indice_uv").innerHTML = "5";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e8e617; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
+
+        document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
+        document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
+
+        document.getElementById("img-2").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-4").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-6").setAttribute("src", "/img/protetor_solar.png");
+      }
+      else if (res[0] >= 142 && res[0] < 162) {
         document.getElementById("recomendacao").innerHTML = "ALTO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
         document.getElementById("fps").innerHTML = "30";
 
+        document.getElementById("indice_uv").innerHTML = "6";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #ed811c; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
+
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+
+        document.getElementById("img-2").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-3").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-4").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-6").setAttribute("src", "/img/guarda_sol.png");
       }
-      else if (res >= 162 && res < 180) {
+      else if (res[0] >= 162 && res[0] < 180) {
         document.getElementById("recomendacao").innerHTML = "ALTO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL";
         document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("indice_uv").innerHTML = "7";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #ed811c; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
+
+        document.getElementById("img-2").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-3").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-4").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-6").setAttribute("src", "/img/guarda_sol.png");
       }
-      else if (res >= 180 && res < 200) {
+      else if (res[0] >= 180 && res[0] < 200) {
         document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
         document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("indice_uv").innerHTML = "8";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e13d21; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-2").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-4").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-5").setAttribute("src", "/img/guarda_sol.png");
+        document.getElementById("img-6").setAttribute("src", "/img/oculos.png");
       }
-      else if (res >= 200 && res < 221) {
+      else if (res[0] >= 200 && res[0] < 221) {
         document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
-        protecao = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        // protecao = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
         document.getElementById("fps").innerHTML = "50";
+
+        document.getElementById("indice_uv").innerHTML = "9";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e13d21; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-2").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-4").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-5").setAttribute("src", "/img/guarda_sol.png");
+        document.getElementById("img-6").setAttribute("src", "/img/oculos.png");
       }
-      else if (res >= 221 && res < 240) {
+      else if (res[0] >= 221 && res[0] < 240) {
         document.getElementById("recomendacao").innerHTML = "MUITO ALTO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL";
         document.getElementById("fps").innerHTML = "60";
 
+        document.getElementById("indice_uv").innerHTML = "10";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #e13d21; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
+
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-2").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-4").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-5").setAttribute("src", "/img/guarda_sol.png");
+        document.getElementById("img-6").setAttribute("src", "/img/oculos.png");
 
       }
       else {
         document.getElementById("recomendacao").innerHTML = "EXTREMO";
-        document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL / ABRIGO RESIDENCIAL";
+        // document.getElementById("protecao").innerHTML = "CAMISA / BONE / PROTETOR SOLAR / GUARDA-SOL / OCULOS DE SOL / ABRIGO RESIDENCIAL";
         document.getElementById("fps").innerHTML = "60";
+
+        document.getElementById("indice_uv").innerHTML = "11";
+        document.getElementById("indice_uv").setAttribute("style", "background-color: #8076b5; border-radius: 100px; font-family:verdana,arial,helvetica; font-weight:bold;");
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
         document.getElementById("barra4").setAttribute("style", "background-color: #e8e617;");
         document.getElementById("barra3").setAttribute("style", "background-color: #ed811c;");
         document.getElementById("barra2").setAttribute("style", "background-color: #e13d21;");
         document.getElementById("barra1").setAttribute("style", "background-color: #8076b5;");
+
+        document.getElementById("img-1").setAttribute("src", "/img/camisa.png");
+        document.getElementById("img-2").setAttribute("src", "/img/bone.png");
+        document.getElementById("img-3").setAttribute("src", "/img/protetor_solar.png");
+        document.getElementById("img-4").setAttribute("src", "/img/guarda_sol.png");
+        document.getElementById("img-5").setAttribute("src", "/img/oculos.png");
+        document.getElementById("img-6").setAttribute("src", "/img/house.png");
       }
       // document.getElementById("value").innerHTML = res;
       // document.getElementById("barra1").setAttribute("style", "background-color: white; visibility: hidden; ");
+      document.getElementById("temperatura").innerHTML = res[1].replace(".00", "°C");
+      document.getElementById("umidade").innerHTML = res[2].replace(".00", "%");
     }
   </script>
 
@@ -127,7 +222,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <meta http-equiv="refresh" content="3">
+  <meta http-equiv="refresh" content="5">
 
   <title>Medidor UV</title>
 
@@ -136,6 +231,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/business-frontpage.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -171,7 +267,7 @@
   </nav>
 
   <!-- Header -->
-  <header class="bg-primary-100 py-2 mb-2">
+  <header class="bg-primary-100 py-2 mb-4">
     <div class="container h-100">
       <!-- <div class="row h-100 align-items-center">
         <div class="col-lg-12">
@@ -189,6 +285,28 @@
   <!-- Page Content -->
   <div class="container">
 
+    <!-- legenda de indicação visual -->
+    <div class="row">
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-1">
+        <center>
+          <h5>NÍVEL</h5>
+        </center>
+      </div>
+
+      <div class="col-md-7">
+        <center>
+          <h5>PROTEÇÃO INDICADA</h5>
+        </center>
+      </div>
+
+      <div class="col-md-2"></div>
+
+    </div>
+
+    <!-- indicação visual -->
     <div class="row">
 
       <div class="col-md-2"></div>
@@ -220,29 +338,75 @@
         </ul>
 
       </div>
-      
 
-      <div class="col-md-7">
+      <div class="col-md-1">
+        <br><br><br><br>
+        <center>
+          <h1 id="indice_uv" style="background-color: white; visibility: hidden;"></h1>
+        </center>
+      </div>
+
+      <div class="col-md-2">
+
+        <br>
+
+        <div id="div-img-1" class="text-center">
+          <img id="img-1" class="rounded" alt="">
+        </div>
+
+        <div id="div-img-2" class="text-center">
+          <img id="img-2" class="rounded" alt="">
+        </div>
+
+      </div>
+      <div class="col-md-2">
+
+        <br>
+
+        <div id="div-img-3" class="text-center">
+          <img id="img-3" class="rounded" alt="">
+        </div>
+
+        <div id="div-img-4" class="text-center">
+          <img id="img-4" class="rounded" alt="">
+        </div>
+
+      </div>
+      <div class="col-md-2">
+
+        <br>
+
+        <div id="div-img-5" class="text-center">
+          <img id="img-5" class="rounded" alt="">
+        </div>
+
+        <div id="div-img-6" class="text-center">
+          <img id="img-6" class="rounded" alt="">
+        </div>
 
       </div>
 
-      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
 
     </div>
 
+    <br><br>
+
     <div class="row">
 
-      <!-- <div class="col-md-12">
-        <div class="progress">
-          <div id="barra" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-            aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+      <div class="col-md-3">
+        <center><i class="fa fa-info-circle" aria-hidden="true"></i></center>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Nível</h5>
+            <p class="card-text" id="recomendacao"><br></p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
         </div>
-      </div> -->
+      </div>
 
-    </div> <br><br>
-
-    <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
+        <center><i class="fa fa-sun-o" aria-hidden="true"></i></center>
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">FPS</h5>
@@ -252,25 +416,37 @@
         </div>
       </div>
 
-      <div class="col-md-8">
+      <!-- <div class="col-md-8">
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Proteção</h5>
             <p class="card-text" id="protecao"><br></p>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-md-3">
+        <center><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i></center>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Temperatura</h5>
+            <p class="card-text" id="temperatura"><br></p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-3">
+        <center><i class="fa fa-tint" aria-hidden="true"></i></center>
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Nível</h5>
-            <p class="card-text" id="recomendacao"><br></p>
+            <h5 class="card-title">Umidade</h5>
+            <p class="card-text" id="umidade"><br></p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
         </div>
       </div>
+
     </div>
 
     <br><br>
@@ -278,10 +454,10 @@
   </div>
   <!-- /.container -->
 
-  <!-- Footer -->
+  <!-- Footer --><br>
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Medidor UV &copy; Instrumentação Eletrônica 2019</p>
+      <p class="m-0 text-center text-white">Medidor UV &copy; Instrumentação Eletrônica 2019.2</p>
     </div>
     <!-- /.container -->
   </footer>

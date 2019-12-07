@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/getUV', function(req, res) {
-   request('http://192.168.0.110/', function (error, response, body) {
+   request('http://192.168.0.120/', function (error, response, body) {
       res.send(body)
    });
 });
