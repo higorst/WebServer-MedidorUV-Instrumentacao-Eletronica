@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script>
-    axios.get('http://localhost:3000/getUV/')
+    axios.get('http://192.168.0.101:3000/getUV/')
       .then(response => sendValue(response.data))
       .catch(error => console.log(error))
 
@@ -222,7 +222,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <meta http-equiv="refresh" content="5">
+  <!-- <meta http-equiv="refresh" content="5"> -->
 
   <title>Medidor UV</title>
 
@@ -231,7 +231,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/business-frontpage.css" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -267,7 +267,7 @@
   </nav>
 
   <!-- Header -->
-  <header class="bg-primary-100 py-2 mb-4">
+  <header class="bg-primary-100 py-1 mb-1">
     <div class="container h-100">
       <!-- <div class="row h-100 align-items-center">
         <div class="col-lg-12">
@@ -286,7 +286,7 @@
   <div class="container">
 
     <!-- legenda de indicação visual -->
-    <div class="row">
+    <!-- <div class="row">
 
       <div class="col-md-2"></div>
 
@@ -304,7 +304,7 @@
 
       <div class="col-md-2"></div>
 
-    </div>
+    </div> -->
 
     <!-- indicação visual -->
     <div class="row">
@@ -312,6 +312,10 @@
       <div class="col-md-2"></div>
 
       <div class="col-md-1">
+          <br><br>
+        <center>
+          <h5>NÍVEL</h5>
+        </center>
 
         <ul class="list-group">
 
@@ -346,44 +350,57 @@
         </center>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-6">
+        <br><br>
+        <center>
+          <h5>PROTEÇÃO INDICADA</h5>
+        </center>
+        <div class="row">
+          <div class="col-md-4">
 
-        <br>
+            <br>
 
-        <div id="div-img-1" class="text-center">
-          <img id="img-1" class="rounded" alt="">
+            <div id="div-img-1" class="text-center">
+              <img id="img-1" class="rounded" alt="">
+            </div>
+
+            <div id="div-img-2" class="text-center">
+              <img id="img-2" class="rounded" alt="">
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <!-- <center>
+            <h5>PROTEÇÃO</h5>
+          </center> -->
+
+            <br>
+
+            <div id="div-img-3" class="text-center">
+              <img id="img-3" class="rounded" alt="">
+            </div>
+
+            <div id="div-img-4" class="text-center">
+              <img id="img-4" class="rounded" alt="">
+            </div>
+
+          </div>
+          <div class="col-md-4">
+
+            <br>
+
+            <div id="div-img-5" class="text-center">
+              <img id="img-5" class="rounded" alt="">
+            </div>
+
+            <div id="div-img-6" class="text-center">
+              <img id="img-6" class="rounded" alt="">
+            </div>
+
+          </div>
+
         </div>
-
-        <div id="div-img-2" class="text-center">
-          <img id="img-2" class="rounded" alt="">
-        </div>
-
-      </div>
-      <div class="col-md-2">
-
-        <br>
-
-        <div id="div-img-3" class="text-center">
-          <img id="img-3" class="rounded" alt="">
-        </div>
-
-        <div id="div-img-4" class="text-center">
-          <img id="img-4" class="rounded" alt="">
-        </div>
-
-      </div>
-      <div class="col-md-2">
-
-        <br>
-
-        <div id="div-img-5" class="text-center">
-          <img id="img-5" class="rounded" alt="">
-        </div>
-
-        <div id="div-img-6" class="text-center">
-          <img id="img-6" class="rounded" alt="">
-        </div>
-
       </div>
 
       <div class="col-md-1"></div>
@@ -395,7 +412,7 @@
     <div class="row">
 
       <div class="col-md-3">
-        <center><i class="fa fa-info-circle" aria-hidden="true"></i></center>
+        <center><img src="img/card/level.png" alt=""></center>
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Nível</h5>
@@ -406,7 +423,7 @@
       </div>
 
       <div class="col-md-3">
-        <center><i class="fa fa-sun-o" aria-hidden="true"></i></center>
+        <center><img src="img/card/fps.jpg" alt=""></center>
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">FPS</h5>
@@ -426,7 +443,7 @@
       </div> -->
 
       <div class="col-md-3">
-        <center><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i></center>
+        <center><img src="img/card/temperature.png" alt=""></center>
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Temperatura</h5>
@@ -437,7 +454,7 @@
       </div>
 
       <div class="col-md-3">
-        <center><i class="fa fa-tint" aria-hidden="true"></i></center>
+        <center><img src="img/card/water.png" alt=""></center>
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Umidade</h5>
@@ -450,6 +467,17 @@
     </div>
 
     <br><br>
+
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <button type="button" class="btn btn-outline-light" onClick="window.location.reload();">
+            <img src="img/card/update.png" alt="">
+          </button>
+        </center>
+      </div>
+    </div>
+
 
   </div>
   <!-- /.container -->
