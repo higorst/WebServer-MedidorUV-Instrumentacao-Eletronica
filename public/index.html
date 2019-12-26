@@ -13,7 +13,7 @@
       let res = str.split(',');
       // res[0] -> leitura UV
       // res[1] -> leitura Temperatura
-      // res[2] -: leitura umidade
+      // res[2] -> leitura umidade
       if (res[0] < 10) {
         document.getElementById("recomendacao").innerHTML = "BAIXO";
         // document.getElementById("protecao").innerHTML = "LIVRE";
@@ -36,7 +36,7 @@
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
 
-        document.getElementById("img-1").setAttribute("src", "/img/livre.png");
+        document.getElementById("img-3").setAttribute("src", "/img/livre.png");
       }
       else if (res[0] >= 65 && res[0] < 83) {
         document.getElementById("recomendacao").innerHTML = "BAIXO";
@@ -48,7 +48,7 @@
 
         document.getElementById("barra5").setAttribute("style", "background-color: #45a939;");
 
-        document.getElementById("img-1").setAttribute("src", "/img/livre.png");
+        document.getElementById("img-3").setAttribute("src", "/img/livre.png");
       }
       else if (res[0] >= 83 && res[0] < 103) {
         document.getElementById("recomendacao").innerHTML = "MODERADO";
@@ -222,7 +222,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- <meta http-equiv="refresh" content="5"> -->
+  <!-- <meta http-equiv="refresh" content="120"> -->
 
   <title>Medidor UV</title>
 
@@ -468,7 +468,8 @@
 
     <br><br>
 
-    <div class="row">
+    <!-- BUTTON UPDATE -->
+    <!-- <div class="row">
       <div class="col-md-12">
         <center>
           <button type="button" class="btn btn-outline-light" onClick="window.location.reload();">
@@ -476,7 +477,7 @@
           </button>
         </center>
       </div>
-    </div>
+    </div> -->
 
 
   </div>
